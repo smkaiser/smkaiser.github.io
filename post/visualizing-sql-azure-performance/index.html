@@ -78,7 +78,7 @@
 <pre>
 SELECT format(getutcdate(), 'HH:mm:ss') [TimeUTC]
     ,sum(CASE 
-            WHEN total_elapsed_time  75000
+            WHEN total_elapsed_time > 75000
                 THEN 1
             ELSE 0
             END) [TasksOver75Seconds]
