@@ -1,2 +1,2 @@
 #!/bin/bash
-grip --export 150511-080324_my-blog-post.md index.html --title "Visualizing SQL Azure Performance" --no-inline
+grip --export 150511-080324_my-blog-post.md index.html --title "Visualizing SQL Azure Performance" 
