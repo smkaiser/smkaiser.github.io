@@ -22,7 +22,7 @@ MSG,8,1,1,A58C2E,1,2017/02/18,10:33:40.604,2017/02/18,10:33:40.616,,,,,,,,,,,,0
 MSG,3,1,1,C036B1,1,2017/02/18,10:33:40.751,2017/02/18,10:33:40.777,,31350,,,47.97528,-122.64436,,,,,,0
 ```
 
-Columns in resulting file:
+Columns in stream from port 30003:
 
 Column | Description
 --- | ---
@@ -36,7 +36,7 @@ Column | Description
 9-10 | Another Date, Time
 11 | Flight or tail number (when type=1)
 12 | Altitude (when type=3)
-13 | Speed (kt) (when type=4)
+13 | Speed in knots (when type=4)
 14 | Heading (when type=4)
 15 | Latitude (when type=3)
 16 | Longitude (when type=3)
@@ -47,7 +47,6 @@ Script to stream from port 30003, find message types 1/3/4, and post each line t
 ```
 nc localhost 30003 | grep --line-buffered "MSG,[134]" | while IFS= read -r line; do
         curl -d "body=$line" http://10.0.1.103:1880/adsb
-#       echo $line
 done
 ```
 ## Node-red Notes
