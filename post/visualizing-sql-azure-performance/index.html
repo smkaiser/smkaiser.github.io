@@ -67,7 +67,7 @@
 <li>
 <em>Why</em>: Are we constrained by resources such as CPU or I/O?</li>
 </ol>
-<p>Here's a view during a recent period of heavy load. The top chart shows a time series that indicates the total number of tasks executing, grouped by how long they have been running. See the gaps on the left side of the chart? That's when we had "too many" tasks running at once and couldn't measure the actual load.</p>
+<p>Here's a view during a recent period of heavy load. The top chart shows a time series that indicates the total number of tasks executing, grouped by how long they have been running. See the gaps on the left side of the chart? That's when we had "too many" tasks running at once, based on our selected performance tier, and couldn't measure the actual load.</p>
 <p>Basically, if the time series chart is mostly green and blue, then things are getting done quickly (unless there are too many things at once). The table on the bottom lists the stored proc names, the SQL command that's executing, and the SQL wait type (if any). The bar chart on the bottom right shows the physical resource usage, like CPU, I/O, and memory. The entire page is updated each second, so we can immediately know the results of any change that is made.</p>
 <p><em>Note</em>: I had to redact the names of the stored procedures, like "MagicStoredProcThatDoesEverything".</p>
 <p><a href="images/b.png" target="_blank"><img src="images/b.png" alt="Chart" style="max-width:100%;"></a></p>
